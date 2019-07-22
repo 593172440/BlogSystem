@@ -5,12 +5,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BlogSystem.models
+namespace BlogSystem.Models
 {
     /// <summary>
     /// 分类表
     /// </summary>
-    class BolgCategory
+    public class BlogCategory
     {
         /// <summary>
         /// 分类名称

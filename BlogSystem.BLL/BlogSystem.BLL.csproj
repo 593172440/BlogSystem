@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{74FF8293-3356-44CC-B761-C33FC239FD8D}</ProjectGuid>
+    <ProjectGuid>{3EDCD3DD-5901-40E6-88FB-521AFC97F2A4}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BlogSystem.models</RootNamespace>
-    <AssemblyName>BlogSystem.models</AssemblyName>
+    <RootNamespace>BlogSystem.BLL</RootNamespace>
+    <AssemblyName>BlogSystem.BLL</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -40,8 +40,6 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -50,15 +48,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Article.cs" />
-    <Compile Include="ArticleToCategory.cs" />
-    <Compile Include="BlogContext.cs" />
-    <Compile Include="BaseEntity.cs" />
-    <Compile Include="BlogCategory.cs" />
-    <Compile Include="Comment.cs" />
-    <Compile Include="Fans.cs" />
+    <Compile Include="UserManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="User.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BlogSystem.DAL\BlogSystem.DAL.csproj">
+      <Project>{5d69ca7a-2a1f-4d8e-b557-43eefd2f3642}</Project>
+      <Name>BlogSystem.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BlogSystem.Dto\BlogSystem.Dto.csproj">
+      <Project>{a487dd5a-531b-4bf7-8914-4294f03bed6f}</Project>
+      <Name>BlogSystem.Dto</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BlogSystem.IBLL\BlogSystem.IBLL.csproj">
+      <Project>{73f88264-5364-47ea-a8dd-c8d894cd5905}</Project>
+      <Name>BlogSystem.IBLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BlogSystem.IDAL\BlogSystem.IDAL.csproj">
+      <Project>{464e4553-ef56-4036-9851-2443cac44ac2}</Project>
+      <Name>BlogSystem.IDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BlogSystem.models\BlogSystem.Models.csproj">
+      <Project>{74ff8293-3356-44cc-b761-c33fc239fd8d}</Project>
+      <Name>BlogSystem.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

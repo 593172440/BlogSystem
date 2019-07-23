@@ -24,6 +24,6 @@ namespace BlogSystem.IBLL
         /// </summary>
         /// <param name="email"></param>
         /// <returns></returns>
-        Dto.UserInformationDto GetUserByEmail(string email);
+        Task<Dto.UserInformationDto> GetUserByEmailAsync(string email);
     }
 }

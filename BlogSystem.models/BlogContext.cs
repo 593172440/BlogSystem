@@ -8,7 +8,7 @@
     {
       
         public BlogContext()
-            : base("name=BlogContext")
+            : base("name=BlogContext2")
         {
             Database.SetInitializer<BlogContext>(null);
         }

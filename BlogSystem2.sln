@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlogSystem.Dto", "BlogSyste
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlogSystem.BLL", "BlogSystem.BLL\BlogSystem.BLL.csproj", "{3EDCD3DD-5901-40E6-88FB-521AFC97F2A4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlogSystem.MVCWeb", "BlogSystem.MVCWeb\BlogSystem.MVCWeb.csproj", "{AE5C0E82-CA98-4BF1-91A0-63EC7BE3DB4A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{3EDCD3DD-5901-40E6-88FB-521AFC97F2A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3EDCD3DD-5901-40E6-88FB-521AFC97F2A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3EDCD3DD-5901-40E6-88FB-521AFC97F2A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE5C0E82-CA98-4BF1-91A0-63EC7BE3DB4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE5C0E82-CA98-4BF1-91A0-63EC7BE3DB4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE5C0E82-CA98-4BF1-91A0-63EC7BE3DB4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE5C0E82-CA98-4BF1-91A0-63EC7BE3DB4A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

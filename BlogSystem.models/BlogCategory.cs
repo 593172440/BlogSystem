@@ -10,7 +10,7 @@ namespace BlogSystem.Models
     /// <summary>
     /// 分类表
     /// </summary>
-    public class BlogCategory
+    public class BlogCategory:BaseEntity
     {
         /// <summary>
         /// 分类名称

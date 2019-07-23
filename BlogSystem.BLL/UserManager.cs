@@ -13,28 +13,52 @@ namespace BlogSystem.BLL
         {
             using (var userSvc = new DAL.UserService())
             {
-                if(await LoginAsync(email,oldPwd))
+                if (await LoginAsync(email, oldPwd))
                 {
                     var user = await userSvc.GetAll().FirstAsync(m => m.Email == email);
                     user.Password = newPwd;
                     await userSvc.EditAsync(user);
                 }
+            }
+        }
+        public async Task ChangeUserInformationAsync(string email, string siteName, string imagePath)
+        {
+            using (var userSvc = new DAL.UserService())
+            {
+                await userSvc.EditAsync(new Models.User() { Email = email, SiteName = siteName, ImagePath = imagePath });
+                //var user= await userSvc.GetAll().FirstAsync(m => m.Email == email);
+                //user.SiteName = siteName;
+                //user.ImagePath = imagePath;
+                //await userSvc.EditAsync(user);
+            }
+        }
+        /// <summary>
+        /// 获取用户信息并转换到dto
+        /// </summary>
+        /// <param name="email"></param>
+        /// <returns></returns>
+        public async Task<UserInformationDto> GetUserByEmailAsync(string email)
+        {
+            //model-->dto;数据转换
+            using (var user = new DAL.UserService())
+            {
+                if (await user.GetAll().AnyAsync(m => m.Email == email))
+                {
+                    return await user.GetAll().Where(m => m.Email == email).Select(m => new Dto.UserInformationDto()
+                    {
+                        Id = m.Id,
+                        Email = m.Email,
+                        FancCount = m.FansCount,
+                        FocusCount = m.FocusCount,
+                        ImagePath = m.ImagePath,
+                        SiteName = m.SiteName
+                    }).FirstAsync();
+                }
                 else
                 {
-
+                    throw new ArgumentException("邮箱不存在");
                 }
             }
-
-        }
-
-        public Task ChangeUserInformationAsync(string email, string siteName, string imagePath)
-        {
-            throw new NotImplementedException();
-        }
-
-        public UserInformationDto GetUserByEmail(string email)
-        {
-            throw new NotImplementedException();
         }
         /// <summary>
         /// 登录
@@ -64,7 +88,7 @@ namespace BlogSystem.BLL
                     Email = email,
                     Password = password,
                     SiteName = "默认的小站",
-                    ImagePath="default.png"
+                    ImagePath = "default.png"
                 });
             }
         }
